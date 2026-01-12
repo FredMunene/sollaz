@@ -1,4 +1,4 @@
-# LazorKit Vite Passkey + Transfer Demo
+# Sollaz LazorKit Passkey + Transfer Demo
 
 This repo is a **documentation-first** example of how to integrate the LazorKit React SDK in a Vite app. It demonstrates:
 
