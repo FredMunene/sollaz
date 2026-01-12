@@ -12,6 +12,7 @@ export function StatusPanel() {
   const copyToClipboard = async (label, value) => {
     if (!value) return;
     try {
+      // Clipboard API only works over secure contexts (https/localhost).
       await navigator.clipboard.writeText(value);
       setCopied(label);
       setTimeout(() => setCopied(''), 1500);

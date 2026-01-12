@@ -169,6 +169,14 @@ npm run build
 
 ---
 
+## Tests
+
+```bash
+npm run test
+```
+
+---
+
 ## Troubleshooting
 
 - **Blank page**: make sure `npm install` completed and `npm run dev` is running.

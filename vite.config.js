@@ -9,5 +9,9 @@ export default defineConfig({
   ],
   server: {
     allowedHosts: ['configurationally-interfascicular-shandra.ngrok-free.dev']
+  },
+  test: {
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.js'
   }
 });
