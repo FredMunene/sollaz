@@ -1,0 +1,167 @@
+:root {
+  color: #0b0b0b;
+  background-color: #f7f5f0;
+  font-family: "Space Grotesk", "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 64px;
+}
+
+.hero {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  color: #6b6b6b;
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-size: clamp(28px, 4vw, 42px);
+  margin: 0 0 12px;
+}
+
+.subhead {
+  font-size: 16px;
+  max-width: 720px;
+  color: #444;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e5e1d8;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin-top: 0;
+  color: #5a5a5a;
+}
+
+.btn {
+  background: #1c1c1c;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stack + .stack {
+  margin-top: 12px;
+}
+
+.error {
+  color: #b00020;
+  margin: 0;
+}
+
+.success {
+  color: #136f2d;
+  margin: 0;
+}
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.mono {
+  font-family: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  word-break: break-all;
+}
+
+.status {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.status div {
+  display: grid;
+  gap: 4px;
+}
+
+.status dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7d7d7d;
+}
+
+.status dd {
+  margin: 0;
+}
+
+.copy-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.copy-btn {
+  border: 1px solid #d6d0c6;
+  background: #f7f5f0;
+  color: #1c1c1c;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.copy-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 32px 18px 48px;
+  }
+}
