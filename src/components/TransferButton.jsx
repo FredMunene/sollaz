@@ -6,6 +6,7 @@ import { config } from '../lib/config.js';
 
 export function TransferButton() {
   const { signAndSendTransaction, smartWalletPubkey } = useWallet();
+  const [recipient, setRecipient] = useState(config.recipientAddress || '');
   const [signature, setSignature] = useState('');
   const [error, setError] = useState('');
   const [isSending, setIsSending] = useState(false);
@@ -19,8 +20,8 @@ export function TransferButton() {
       return;
     }
 
-    if (!config.recipientAddress) {
-      setError('Set VITE_RECIPIENT_ADDRESS in your .env file.');
+    if (!recipient) {
+      setError('Enter a recipient address or set VITE_RECIPIENT_ADDRESS.');
       return;
     }
 
@@ -28,7 +29,7 @@ export function TransferButton() {
 
     try {
       // 1) Create the transfer instruction.
-      const destination = new PublicKey(config.recipientAddress);
+      const destination = new PublicKey(recipient);
       const lamports = Math.round(config.transferAmountSol * LAMPORTS_PER_SOL);
 
       const instruction = SystemProgram.transfer({
@@ -57,6 +58,16 @@ export function TransferButton() {
 
   return (
     <div className="stack">
+      <label className="field">
+        <span className="field-label">Recipient address</span>
+        <input
+          className="input"
+          type="text"
+          value={recipient}
+          onChange={(event) => setRecipient(event.target.value)}
+          placeholder="Paste a devnet address"
+        />
+      </label>
       <button className="btn" onClick={handleTransfer} disabled={isSending}>
         {isSending ? 'Sending...' : `Send ${config.transferAmountSol} SOL`}
       </button>
